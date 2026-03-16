@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950 text-zinc-50 antialiased">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Sol Rudd - Operator & Technical Founder</title>
+		<meta name="description" content="Operator & Technical Founder. Bridging performance, compliance, and commercial growth." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --c-gray-950: #030303;
+        --c-gray-900: #1C1C1C;
+        --c-gray-800: #3a3a3a;
+        --c-gray-400: #a0a0a0;
+        --c-gray-50: #fafafa;
+      }
+      html { 
+        font-family: 'Inter', system-ui, sans-serif;
+        background-color: var(--c-gray-950);
+        color: var(--c-gray-50);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-size: 1.125rem;
+        line-height: 1.7;
+      }
+      section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .section-neutral {
+        background-color: #09090b;
+        border-top: 1px solid var(--c-gray-900);
+        border-bottom: 1px solid var(--c-gray-900);
+      }
+    </style>
+	</head>
+	<body>
+		<header class="w-full">
+      <div class="max-w-5xl mx-auto w-full px-6 py-5 flex justify-between items-center">
+        <a href="/" aria-label="Home" class="flex items-center">
+          <img src="/logo.png" alt="Sol Rudd" class="h-8 w-auto" />
+        </a>
+        <nav class="hidden md:flex gap-8 text-base font-medium text-zinc-400">
+          <a href="/#what-i-do" class="hover:text-zinc-50 transition-colors">What I Do</a>
+          <a href="/#ventures" class="hover:text-zinc-50 transition-colors">Ventures</a>
+          <a href="/#contact" class="hover:text-zinc-50 transition-colors">Contact</a>
+        </nav>
+      </div>
+		</header>
+		<main class="flex-grow">
+			<slot />
+		</main>
+		<footer class="mt-auto border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto w-full px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/logo.png" alt="Sol Rudd" class="h-6 w-auto opacity-50" />
+          <p class="text-sm text-zinc-500">
+              &copy; {new Date().getFullYear()} Sol Rudd. All rights reserved.
+          </p>
+        </div>
+        <div class="flex gap-6 text-sm text-zinc-500">
+          <a href="https://twitter.com/solrudd" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors">X / Twitter</a>
+          <a href="https://linkedin.com/in/solrudd" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors">LinkedIn</a>
+          <a href="https://github.com/solrudd" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors">GitHub</a>
+        </div>
+      </div>
+		</footer>
+	</body>
+</html>
